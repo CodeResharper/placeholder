@@ -6,6 +6,8 @@ const path = require('path');
 module.exports.load = function( opts ){
   const dataDir = process.env.PLACEHOLDER_DATA || path.join( __dirname, '../data/');
   const dbPath = path.join( dataDir, 'store.sqlite3' );
+  
+  console.log('dataPath : ' + dataPath ?? "");
 
   this.store.open( dbPath, opts ); // document store
   this.index.open( dbPath, opts ); // token index
